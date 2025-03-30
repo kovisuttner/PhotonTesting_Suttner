@@ -2743,6 +2743,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 841090234438633705, guid: e63a6375602a41b47a004c3d50f613c2,
+        type: 3}
+      propertyPath: networkRunnerPrefab
+      value: 
+      objectReference: {fileID: -6660442257521695619, guid: fd6491a2a16d8e742a8a53ddfa965900,
+        type: 3}
     - target: {fileID: 1250885795521276766, guid: e63a6375602a41b47a004c3d50f613c2,
         type: 3}
       propertyPath: m_Name
