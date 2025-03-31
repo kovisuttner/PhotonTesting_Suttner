@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Fusion;
+using UnityEngine;
 
 public enum InputButton
 {
-    Jump, 
+    Jump,
 }
 
 public struct NetInput : INetworkInput
 {
     public NetworkButtons Buttons;
     public Vector2 Direction;
+    public Vector2 LookDelta;
 }
