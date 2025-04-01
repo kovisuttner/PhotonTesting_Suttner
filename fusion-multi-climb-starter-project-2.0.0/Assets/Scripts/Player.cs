@@ -13,7 +13,10 @@ public class Player : NetworkBehaviour
     [SerializeField] private Transform camTarget;
     [SerializeField] private float lookSensitivity = 0.15f;
 
-    [Networked] private NetworkButtons PreviousButtons { get; set; } 
+    [SerializeField] private Canvas itCanvas;
+
+    [Networked] private NetworkButtons PreviousButtons { get; set; }
+    [Networked] public bool IsIt { get; set; }
 
 
     public override void Spawned()
@@ -27,6 +30,9 @@ public class Player : NetworkBehaviour
 
             CameraFollow.Singleton.SetTarget(camTarget);
         }
+
+        if (itCanvas != null)
+            itCanvas.gameObject.SetActive(false);
     }
 
     public override void FixedUpdateNetwork()
@@ -49,6 +55,9 @@ public class Player : NetworkBehaviour
     public override void Render()
     {
         UpdateCamTarget();
+
+         if (itCanvas != null)
+            itCanvas.gameObject.SetActive(HasInputAuthority && IsIt);
     }
 
     private void UpdateCamTarget()
